@@ -5,3 +5,6 @@ my first code in c++ name.cpp <br>
 3 : code two number add <br>
 4 : code size of data type <br>
 5 : code value of ascii <br>
+6 : code 
+7 : code
+8 :code area of rectangle and perimeter
