@@ -1,0 +1,147 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main() {
+    cout << fixed << setprecision(2);
+    system("color 0A");
+
+    string password;
+    int choice;
+
+    cout << "\n==========================================================\n";
+    cout << "                WELCOME TO YASH'S SYSTEM                 \n";
+    cout << "==========================================================\n";
+    cout << "Please enter the password to login: ";
+    cin >> password;
+
+    if (password == "yashjain") {
+        system("color F3"); 
+        while (true) {
+            cout << "\n----------------------------------------------------------\n";
+            cout << "  1. Open Mega Calculator\n";
+            cout << "  2. Exit Program\n";
+            cout << "  Enter your choice: ";
+            cin >> choice;
+
+            if (choice == 1) {
+                int calcOption;
+                cout << "\n>>> Welcome to Mega Calculator <<<\n";
+                cout << "  1. Addition\n  2. Subtraction\n  3. Multiplication\n  4. Division\n  5. LCM Finder\n  6. 12th Percentage Calculator\n";
+                cout << "  Choose a number: ";
+                cin >> calcOption;
+
+                // यहाँ 'g' को वापस जोड़ दिया गया है (Fixed)
+                long double d, e, f, g, h, i, j; 
+                long long int a, b, c;
+
+                switch (calcOption) {
+                    case 1:
+                        cout << "\nHow many numbers do you want to add?: ";
+                        cin >> a;
+                        e = 0;
+                        for (c = 1; c <= a; c++) {
+                            cout << "Enter number " << c << ": ";
+                            cin >> d;
+                            e += d;
+                        }
+                        cout << "RESULT (Sum) = " << e << endl;
+                        break;
+
+                    case 2:
+                        cout << "\nHow many numbers to subtract?: ";
+                        cin >> a;
+                        cout << "Enter number 1: ";
+                        cin >> e;
+                        for (c = 2; c <= a; c++) {
+                            cout << "Enter number " << c << ": ";
+                            cin >> d;
+                            e -= d;
+                        }
+                        cout << "RESULT (Subtraction) = " << e << endl;
+                        break;
+
+                    case 3:
+                        cout << "\nHow many numbers to multiply?: ";
+                        cin >> a;
+                        e = 1;
+                        for (c = 1; c <= a; c++) {
+                            cout << "Enter number " << c << ": ";
+                            cin >> d;
+                            e *= d;
+                        }
+                        cout << "RESULT (Multiplication) = " << e << endl;
+                        break;
+
+                    case 4:
+                        cout << "\nEnter dividend: ";
+                        cin >> d;
+                        cout << "Enter divisor: ";
+                        cin >> e;
+                        if (e != 0) {
+                            f = d / e;
+                            cout << "RESULT (Division) = " << f << endl;
+                        } else {
+                            cout << "Error: Division by zero!\n";
+                        }
+                        break;
+
+                    case 5:
+                        cout << "\nEnter first number: ";
+                        cin >> a;
+                        cout << "Enter second number: ";
+                        cin >> b;
+                        c = (a > b) ? a : b;
+                        while (true) {
+                            if (c % a == 0 && c % b == 0) {
+                                cout << "RESULT (LCM) = " << c << endl;
+                                break;
+                            }
+                            c++;
+                        }
+                        break;
+
+                    case 6:
+                        cout << "\n--- 12th Marks Analyzer ---\n";
+                        cout << "Hindi: "; cin >> h;
+                        cout << "English: "; cin >> i;
+                        cout << "Math/Bio: "; cin >> j;
+                        cout << "Physics: "; cin >> d;
+                        cout << "Chemistry: "; cin >> e;
+
+                        if (h>100 || i>100 || j>100 || d>100 || e>100 || h<0 || i<0 || j<0 || d<0 || e<0) {
+                            cout << "Error: Invalid marks!\n";
+                        } else {
+                            f = h + i + j + d + e;
+                            g = f / 5.0; // अब यह 'g' सही काम करेगा
+                            cout << "PERCENTAGE = " << g << "%\n";
+                            if (h>=75 && i>=75 && j>=75 && d>=75 && e>=75)
+                                cout << "Result: PASS (First Division with Honours!)\n";
+                            else if (h>=60 && i>=60 && j>=60 && d>=60 && e>=60)
+                                cout << "Result: PASS (First Grade)\n";
+                            else if (h>=33 && i>=33 && j>=33 && d>=33 && e>=33)
+                                cout << "Result: PASS\n";
+                            else
+                                cout << "Result: FAIL (Try again!)\n";
+                        }
+                        break;
+
+                    default:
+                        cout << "Wrong Choice!\n";
+                        break;
+                }
+            } else if (choice == 2) {
+                cout << "Exiting... Thank you!\n";
+                break;
+            } else {
+                cout << "Invalid selection!\n";
+            }
+        }
+    } else {
+        cout << "Access Denied: Wrong Password!\n";
+    }
+
+    return 0;
+}
