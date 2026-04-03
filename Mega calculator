@@ -32,8 +32,6 @@ int main() {
                 cout << "  1. Addition\n  2. Subtraction\n  3. Multiplication\n  4. Division\n  5. LCM Finder\n  6. 12th Percentage Calculator\n";
                 cout << "  Choose a number: ";
                 cin >> calcOption;
-
-                // यहाँ 'g' को वापस जोड़ दिया गया है (Fixed)
                 long double d, e, f, g, h, i, j; 
                 long long int a, b, c;
 
@@ -115,7 +113,7 @@ int main() {
                             cout << "Error: Invalid marks!\n";
                         } else {
                             f = h + i + j + d + e;
-                            g = f / 5.0; // अब यह 'g' सही काम करेगा
+                            g = f / 5.0;
                             cout << "PERCENTAGE = " << g << "%\n";
                             if (h>=75 && i>=75 && j>=75 && d>=75 && e>=75)
                                 cout << "Result: PASS (First Division with Honours!)\n";
